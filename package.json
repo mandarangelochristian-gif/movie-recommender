@@ -13,5 +13,8 @@
     "node-cache": "^5.1.2",
     "node-fetch": "2"
   }
+  "engines": {
+    "node": "18.x"
+  } 
 }
 {"name":"movie recommender","version":"1.0.0","main":"server.js","type":"commonjs","scripts":{"start":"node server.js"},"dependencies":{"cors":"^2.8.5","express":"^4.22.1","fast-xml-parser":"^4.5.3","node-cache":"^5.1.2","node-fetch":"^2.7.0"}}

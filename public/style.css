@@ -1,0 +1,211 @@
+/* Global body */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #0b0f1f, #101a33, #0b0f1f);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #eee;
+  height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left panel - Movie Recommender box */
+.left-panel {
+  width: 30%;
+  background: linear-gradient(145deg, #0b1a33, #1a2a55, #0b1a33); /* Cinematic deep blue gradient */
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 60, 255, 0.5), 0 0 40px rgba(0, 40, 180, 0.3) inset;
+  animation: floatPanel 6s ease-in-out infinite; /* subtle floating effect */
+}
+
+/* Floating animation */
+@keyframes floatPanel {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Title */
+.left-panel h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Cursive', sans-serif;
+  color: #aad4ff; /* soft cinematic blue */
+  text-shadow: none; /* remove neon glow */
+}
+
+/* Inputs and selects */
+.left-panel input, 
+.left-panel select {
+  background: #1a2a55; /* dark blue input */
+  border: 1px solid #4f81ff; /* blue border */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.left-panel input:hover, 
+.left-panel select:hover {
+  box-shadow: 0 0 10px rgba(79, 129, 255, 0.7);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.left-panel button {
+  background: #3366ff; /* blue button */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(51,102,255,0.6);
+}
+
+.left-panel button:hover {
+  background: #5590ff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 20px rgba(51,102,255,0.8);
+}
+
+/* Year range inputs */
+.year-range {
+  display: flex;
+  gap: 10px;
+}
+
+/* Right panel */
+.right-panel {
+  width: 70%;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: #0a0f1a;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+/* Movie card */
+.card {
+  background: #1a2a55;
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,50,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 80, 255, 0.7);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.card p {
+  font-size: 14px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+/* Placeholder text */
+.placeholder {
+  font-size: 18px;
+  color: #888;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #1a2a55;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+  display: flex;
+  gap: 20px;
+  color: #eee;
+}
+
+.modal-content img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.modal-content .info {
+  flex: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #aad4ff;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #5590ff;
+}

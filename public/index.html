@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h1>Film Finder</h1>
+
+      <label for="username">Letterboxd Username</label>
+      <input id="username" placeholder="e.g. davidlynch">
+
+      <label for="genre">Select Genre</label>
+      <select id="genre">
+        <option value="28">Action</option>
+        <option value="35">Comedy</option>
+        <option value="18">Drama</option>
+        <option value="27">Horror</option>
+        <option value="10749">Romance</option>
+        <option value="14">Fantasy</option>
+        <option value="878">Sci-Fi</option>
+        <option value="80">Crime</option>
+        <option value="53">Thriller</option>
+        <option value="16">Animation</option>
+      </select>
+
+      <label>Year Range</label>
+      <div class="year-range">
+        <input id="startYear" type="number" placeholder="From (e.g. 2000)">
+        <input id="endYear" type="number" placeholder="To (e.g. 2025)">
+      </div>
+
+      <label for="preference">Preference</label>
+      <select id="preference">
+        <option value="mainstream">Mainstream</option>
+        <option value="obscure">Hidden Gems</option>
+      </select>
+
+      <button id="recommendBtn">Get Recommendations</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <div class="right-panel" id="results">
+      <p class="placeholder">Your recommendations will appear here...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
